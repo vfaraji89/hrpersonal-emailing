@@ -1,0 +1,25 @@
+#Install The blastula package
+install.packages("blastula")
+library(blastula)
+#dateformat
+date_time <- add_readable_time()
+#emaildetails
+compose_email()
+email <-
+  compose_email(
+    body = md(glue::glue(
+"Dear interviewee,
+
+Thank you for the time you took for the interview. We appreciate your patience and presence.
+We regret that unfortunately we can not offer you a position at this time on the basis of the evaluation.
+However, this is a conditional decision and does not necessarily mean that you are not eligible for the position.  
+Please keep in touch for future opportunities to have you in our team. 
+You can contact us for further feedback and details regarding your interview.
+
+")),
+    footer = md(glue::glue("Email sent on {date_time}."))
+  )
+  
+  
+  
+
